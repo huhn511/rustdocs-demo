@@ -17,9 +17,8 @@ jobs:
           mdbook-version: 'latest'
 
       - run: mdbook build
-      - run: cargo doc --all-features --document-private-items --no-deps
+      - run: cargo doc --all-features --document-private-items --no-deps --release
       - run: cp -r target/doc book/docs
-      - run: cp -r book/docs/rustdocs_demo/* book/docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
